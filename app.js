@@ -7,23 +7,24 @@ const computerPlay = () => {
 };
 
 computerSelection = computerPlay();
-// const playRound = (playerSelection) => {
-//   if (playerSelection === computerSelection) {
-//     return `Tie game.`;
-//   } else if (
-//     (playerSelection === "Rock" && computerSelection === "Paper") ||
-//     (playerSelection === "Paper" && computerSelection === "Rock") ||
-//     (playerSelection === "Scissors" && computerSelection === "Paper")
-//   ) {
-//     return `Player beats Computer ${computerSelection} with ${playerSelection}`;
-//   }
-
-//   if (
-//     (computerSelection === "Rock" && playerSelection === "Scissors") ||
-//     (computerSelection === "Paper" && playerSelection === "Rock") ||
-//     (computerSelection === "Scissors" && playerSelection === "Paper")
-//   ) {
-//     return `Computer won with ${computerSelection}`;
-//   }
-// };
-// playRound("Paper");
+playerSelection = prompt("rock paper scissors");
+const playRound = (playerSelection) => {
+  if (playerSelection === computerSelection) {
+    console.log(`Tied`);
+  } else if (
+    (playerSelection === "rock" && computerSelection === "scissors") ||
+    (playerSelection === "paper" && computerSelection === "rock") ||
+    (playerSelection === "scissors" && computerSelection === "paper")
+  ) {
+    console.log(`Player wins!`);
+  } else if (
+    (computerSelection === "rock" && playerSelection === "scissors") ||
+    (computerSelection === "paper" && playerSelection === "rock") ||
+    (computerSelection === "scissors" && playerSelection === "paper")
+  ) {
+    console.log(`Computer wins`);
+  }
+};
+console.log(playerSelection);
+console.log(computerSelection);
+playRound(playerSelection);
