@@ -1,4 +1,5 @@
-let playerSelection, computerSelection;
+let playerSelection, computerSelection, computerScore, playerScore;
+const gameScore = [];
 const choice = ["rock", "paper", "scissors"];
 
 const computerPlay = () => {
@@ -17,14 +18,23 @@ const playRound = (playerSelection) => {
     (playerSelection === "scissors" && computerSelection === "paper")
   ) {
     console.log(`Player wins!`);
+    console.log(`Player scored a point`);
   } else if (
     (computerSelection === "rock" && playerSelection === "scissors") ||
     (computerSelection === "paper" && playerSelection === "rock") ||
     (computerSelection === "scissors" && playerSelection === "paper")
   ) {
     console.log(`Computer wins`);
+    console.log(`Computer scored a point`);
   }
 };
-console.log(playerSelection);
-console.log(computerSelection);
-playRound(playerSelection);
+// console.log(playerSelection);
+// console.log(computerSelection);
+// playRound(playerSelection);
+
+const game = () => {
+  for (let i = 0; i < 5; i++) {
+    playRound(playerSelection);
+  }
+};
+game();
